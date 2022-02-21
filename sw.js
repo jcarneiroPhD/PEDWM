@@ -2,15 +2,15 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll([
-        '/PEDWM/',
-        '/PEDWM/index.html',
-        '/PEDWM/style.css',
-        '/PEDWM/app.js',
-        '/PEDWM/image-list.js',
-        '/PEDWM/star-wars-logo.jpg',
-        '/PEDWM/gallery/bountyHunters.jpg',
-        '/PEDWM/gallery/myLittleVader.jpg',
-        '/PEDWM/gallery/snowTroopers.jpg'
+        '/sw-test/',
+        '/sw-test/index.html',
+        '/sw-test/style.css',
+        '/sw-test/app.js',
+        '/sw-test/image-list.js',
+        '/sw-test/star-wars-logo.jpg',
+        '/sw-test/gallery/bountyHunters.jpg',
+        '/sw-test/gallery/myLittleVader.jpg',
+        '/sw-test/gallery/snowTroopers.jpg'
       ]);
     })
   );
@@ -34,7 +34,7 @@ self.addEventListener('fetch', function(event) {
         });
         return response;
       }).catch(function () {
-        return caches.match('/PEDWM/gallery/myLittleVader.jpg');
+        return caches.match('/sw-test/gallery/myLittleVader.jpg');
       });
     }
   }));
